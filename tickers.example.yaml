@@ -1,0 +1,21 @@
+# Per-ticker wheel configuration. Copy to tickers.yaml and edit.
+# All deltas are absolute values (we sell, so puts are negative-delta, calls positive).
+defaults:
+  target_delta: 0.30
+  dte_min: 30
+  dte_max: 45
+  min_credit: 0.50          # minimum premium per share to consider
+  max_contracts: 1
+  enabled: false
+
+tickers:
+  AAPL:
+    enabled: true
+    target_delta: 0.25
+    dte_min: 30
+    dte_max: 45
+    min_credit: 0.75
+    max_contracts: 1
+
+  MSFT:
+    enabled: false

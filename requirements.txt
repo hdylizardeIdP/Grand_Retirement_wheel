@@ -1,0 +1,6 @@
+schwab-py>=1.5.0
+click>=8.1
+rich>=13.7
+python-dotenv>=1.0
+pyyaml>=6.0
+cryptography>=42.0

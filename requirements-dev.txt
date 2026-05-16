@@ -1,0 +1,7 @@
+-r requirements.txt
+pytest>=8.0
+pytest-mock>=3.12
+freezegun>=1.4
+mypy>=1.8
+ruff>=0.3
+types-PyYAML

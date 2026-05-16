@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wheel"
+version = "0.1.0"
+description = "Wheel options strategy bot for a single Charles Schwab account."
+requires-python = ">=3.11"
+readme = { text = "Wheel options strategy bot.", content-type = "text/plain" }
+dependencies = [
+    "schwab-py>=1.5.0",
+    "click>=8.1",
+    "rich>=13.7",
+    "python-dotenv>=1.0",
+    "pyyaml>=6.0",
+    "cryptography>=42.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-mock>=3.12",
+    "freezegun>=1.4",
+    "mypy>=1.8",
+    "ruff>=0.3",
+    "types-PyYAML",
+]
+
+[project.scripts]
+wheel = "wheel.cli.main:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src", "tests"]
